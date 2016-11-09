@@ -1,7 +1,8 @@
 <?php
 /*
 Plugin Name: GW Toolbelt Main
-GitHub Plugin URI: DIntriligator/GW-Toolbelt-MainGitHub Plugin URI: https://github.com/DIntriligator/GW-Toolbelt-Main
+GitHub Plugin URI: DIntriligator/GW-Toolbelt-Main
+GitHub Plugin URI: https://github.com/DIntriligator/GW-Toolbelt-Main
 Description: A Group of plugins aimed at making the development of wordpress plugins easier. This main plugin will serve as a hub for all of the others
 Author: Graphics Westchester
 Version: 0.0.00
@@ -25,10 +26,9 @@ define( 'GWTB_PLUGIN_DIR', dirname(__FILE__).'/' );
 
 function gwtb_admin_menu() {
 	$menu = add_menu_page( 'GW Toolbelt', 'GW Toolbelt', 'manage_options', 'gwtoolbelt', 'gwtb_admin_menu_init', plugin_dir_url(__FILE__) . 'images/graphw-logo.png');
-		add_action( 'admin_print_styles-' . $menu, 'gwtb_admin_style' );
 
 }
-add_action( 'admin_menu', 'gwtb_admin_menu' );
+add_action( 'admin_menu', 'gwtb_admin_menu' , 1);
 
 /*
 *  gwtb_admin_menu_init
@@ -61,10 +61,9 @@ function gwtb_admin_menu_init() {
 
 function gwtb_admin_status_menu(){
 	$menu = add_submenu_page( 'gwtoolbelt', 'Status', 'Status', 'manage_options', 'gwtb-status', 'gwtb_status_init' );
-	add_action( 'admin_print_styles-' . $menu, 'gwtb_admin_style' );
 
 }
-add_action( 'admin_menu', 'gwtb_admin_status_menu' );
+add_action( 'admin_menu', 'gwtb_admin_status_menu', 2 );
 
 /*
 *  gwtb_admin_status_menu
@@ -99,3 +98,4 @@ function gwtb_admin_style() {
  
   wp_enqueue_style( 'custom_wp_admin_css', plugins_url('style.css', __FILE__) );
 }
+add_action('admin_head', 'gwtb_admin_style');
