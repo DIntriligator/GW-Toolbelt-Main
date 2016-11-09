@@ -493,6 +493,7 @@ there.
     margin-bottom: -8px; }
 
 .admin-body {
+  margin-top: -8px;
   width: 100%;
   background-color: #fff;
   min-height: 20px; }
