@@ -8,7 +8,7 @@ Version: 0.0.00
 */
 
 //define plugin directory constant
-define( 'PLUGIN_DIR', dirname(__FILE__).'/' );  
+define( 'GWTB_PLUGIN_DIR', dirname(__FILE__).'/' );  
 
 /*
 *  gwtb_admin_menu
@@ -24,14 +24,32 @@ define( 'PLUGIN_DIR', dirname(__FILE__).'/' );
 */
 
 function gwtb_admin_menu() {
-	add_menu_page( 'GW Toolbelt', 'GW Toolbelt', 'manage_options', 'gwtoolbelt', '', plugin_dir_url(__FILE__) . 'images/graphw-logo.png');
+	$menu = add_menu_page( 'GW Toolbelt', 'GW Toolbelt', 'manage_options', 'gwtoolbelt', 'gwtb_admin_menu_init', plugin_dir_url(__FILE__) . 'images/graphw-logo.png');
+		add_action( 'admin_print_styles-' . $menu, 'gwtb_admin_style' );
+
 }
 add_action( 'admin_menu', 'gwtb_admin_menu' );
 
 /*
-*  gwtb_admin_settings_menu
+*  gwtb_admin_menu_init
 *
-*  This function adds a settings section to view  
+*  This function adds a menu that will allow addon plugins to 
+*
+*  @type    function
+*  @date    11/09/16
+*  @since   0.0.00
+*
+*  @param   N/A
+*  @return  N/A
+*/
+function gwtb_admin_menu_init() {
+	include(GWTB_PLUGIN_DIR . 'admin-welcome.php');
+}
+
+/*
+*  gwtb_admin_status_menu
+*
+*  This function adds a status section to view the status of addon settings.
 *
 *  @type    function
 *  @date    11/09/16
@@ -42,6 +60,42 @@ add_action( 'admin_menu', 'gwtb_admin_menu' );
 */
 
 function gwtb_admin_status_menu(){
-	add_submenu_page( 'gwtoolbelt', 'Status', 'Status', 'manage_options', 'gwtb-status', 'gwtb_status_init' )
+	$menu = add_submenu_page( 'gwtoolbelt', 'Status', 'Status', 'manage_options', 'gwtb-status', 'gwtb_status_init' );
+	add_action( 'admin_print_styles-' . $menu, 'gwtb_admin_style' );
+
 }
-add_action( 'admin_menu', 'gwtb_admin_menu' );
+add_action( 'admin_menu', 'gwtb_admin_status_menu' );
+
+/*
+*  gwtb_admin_status_menu
+*
+*  This function adds a page layout for the gwtb_admin_status_menu function
+*
+*  @type    function
+*  @date    11/09/16
+*  @since   0.0.00
+*
+*  @param   N/A
+*  @return  N/A
+*/
+
+function gwtb_status_init(){
+	include(GWTB_PLUGIN_DIR . 'admin-status.php');
+}
+
+/*
+*  gwtb_admin_style 
+*
+*  This function adds a css page that only works in tool belt menu pages. add:	add_action( 'admin_print_styles-' . $menu, 'gwtb_admin_style' ); when adding a submenu.
+*
+*  @type    function
+*  @date    11/09/16
+*  @since   0.0.00
+*
+*  @param   N/A
+*  @return  N/A
+*/
+function gwtb_admin_style() {
+ 
+  wp_enqueue_style( 'custom_wp_admin_css', plugins_url('style.css', __FILE__) );
+}
