@@ -34,6 +34,12 @@ function gwtb_create_cpts(){
       if($cpt['public'] == true){
         $public = true;
       }
+      if($cpt['archive'] == true){
+        $archive = true;
+      }
+      if($cpt['hierarchical'] == true){
+        $hierarchical = true;
+      }
 
       $labels = array(
         'name'               => ( $cpt['slug'] ),
@@ -45,8 +51,8 @@ function gwtb_create_cpts(){
         'labels'             => $labels,
         'public'             => $public,
         'rewrite'            => array( 'slug' => $cpt['slug'] ),
-        'has_archive'        => $cpt['archive'],
-        'hierarchical'       => $cpt['hierarchical'],
+        'has_archive'        => $archive,
+        'hierarchical'       => $hierarchical,
         'menu_icon'          => $cpt['icon'],
        'supports'           => array( $title_cpt, $editor_cpt, $author_cpt, $thumbnail_cpt, $excerpt_cpt, $comments_cpt, $page_attributes_cpt )
       );
