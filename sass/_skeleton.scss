@@ -174,11 +174,12 @@ a:hover {
 
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.button,
-button,
+.buttons,
+buttons,
 input[type="submit"],
 input[type="reset"],
-input[type="button"] {
+input[type="button"],
+.admin-checkbox label{
   display: inline-block;
   height: 38px;
   padding: 0 30px;
@@ -196,44 +197,77 @@ input[type="button"] {
   border:none;
   cursor: pointer;
   box-sizing: border-box; }
-.button:hover,
-button:hover,
+.buttons:hover,
+buttons:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
-.button:focus,
-button:focus,
+.buttons:focus,
+buttons:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
   color: #333;
   border-color: #888;
   outline: 0; }
-.button.button-primary,
-button.button-primary,
+.buttons.button-brand,
+buttons.button-brand,
 input[type="submit"].button-brand,
 input[type="reset"].button-brand,
-input[type="button"].button-brand {
+input[type="button"].button-brand, 
+{
+  top: -4px;
   background-color: $yellow;
   color:#fff;
   border-bottom: 4px solid darken($yellow, 20%);
   border-radius:5px; 
   margin:10px;}
-.button.button-brand:hover,
-button.button-brand:hover,
+.buttons.button-brand:hover,
+buttons.button-brand:hover,
 input[type="submit"].button-brand:hover,
 input[type="reset"].button-brand:hover,
 input[type="button"].button-brand:hover,
-.button.button-brand:focus,
-button.button-brand:focus,
+.buttons.button-brand:focus,
+buttons.button-brand:focus,
 input[type="submit"].button-brand:focus,
 input[type="reset"].button-brand:focus,
-input[type="button"].button-brand:focus {
+input[type="button"].button-brand:focus, 
+{
+top:-2px;
   position:relative;
   top:1px;
   color: #FFF;
   background-color: $yellow;
   border-bottom: 3px solid darken($yellow, 20%); }
+.buttons.button-black,
+buttons.button-black,
+input[type="submit"].button-black,
+input[type="reset"].button-black,
+input[type="button"].button-black, 
+.admin-checkbox label{
+  top: -4px;
+  background-color: #aaa;
+  color:#fff;
+  border-bottom: 4px solid #888;
+  border-radius:5px; 
+  margin:10px;}
+.buttons.button-black:hover,
+buttons.button-black:hover,
+input[type="submit"].button-black:hover,
+input[type="reset"].button-black:hover,
+input[type="button"].button-black:hover,
+.buttons.button-black:focus,
+buttons.button-black:focus,
+input[type="submit"].button-black:focus,
+input[type="reset"].button-black:focus,
+input[type="button"].button-black:focus, 
+.admin-checkbox label:hover{
+top:-2px;
+  position:relative;
+  top:1px;
+  color: #FFF;
+  background-color: #aaa;
+  border-bottom: 3px solid #888; }
 
 
 /* Forms
@@ -348,7 +382,7 @@ p,
 ul,
 ol,
 form {
-  margin-bottom: 2.5rem; }
+  margin-bottom: 0rem; }
 
 
 /* Utilities
