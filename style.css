@@ -23,6 +23,9 @@
 - Clearing
 - Media Queries
 */
+.text-center {
+  text-align: center; }
+
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .container {
@@ -258,8 +261,8 @@ input[type="button"] {
   padding: 0 30px;
   color: #555;
   text-align: center;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 900;
   line-height: 38px;
   letter-spacing: .1rem;
   text-transform: uppercase;
@@ -267,7 +270,7 @@ input[type="button"] {
   white-space: nowrap;
   background-color: transparent;
   border-radius: 4px;
-  border: 1px solid #bbb;
+  border: none;
   cursor: pointer;
   box-sizing: border-box; }
 
@@ -287,26 +290,30 @@ input[type="button"]:focus {
 
 .button.button-primary,
 button.button-primary,
-input[type="submit"].button-primary,
-input[type="reset"].button-primary,
-input[type="button"].button-primary {
-  color: #FFF;
-  background-color: #33C3F0;
-  border-color: #33C3F0; }
+input[type="submit"].button-brand,
+input[type="reset"].button-brand,
+input[type="button"].button-brand {
+  background-color: #FBB03B;
+  color: #fff;
+  border-bottom: 4px solid #cc7e04;
+  border-radius: 5px;
+  margin: 10px; }
 
-.button.button-primary:hover,
-button.button-primary:hover,
-input[type="submit"].button-primary:hover,
-input[type="reset"].button-primary:hover,
-input[type="button"].button-primary:hover,
-.button.button-primary:focus,
-button.button-primary:focus,
-input[type="submit"].button-primary:focus,
-input[type="reset"].button-primary:focus,
-input[type="button"].button-primary:focus {
+.button.button-brand:hover,
+button.button-brand:hover,
+input[type="submit"].button-brand:hover,
+input[type="reset"].button-brand:hover,
+input[type="button"].button-brand:hover,
+.button.button-brand:focus,
+button.button-brand:focus,
+input[type="submit"].button-brand:focus,
+input[type="reset"].button-brand:focus,
+input[type="button"].button-brand:focus {
+  position: relative;
+  top: 1px;
   color: #FFF;
-  background-color: #1EAEDB;
-  border-color: #1EAEDB; }
+  background-color: #FBB03B;
+  border-bottom: 3px solid #cc7e04; }
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -479,9 +486,6 @@ there.
 /* Larger than tablet */
 /* Larger than desktop */
 /* Larger than Desktop HD */
-.text-center {
-  text-align: center; }
-
 .admin-title {
   margin-top: 50px;
   background-color: #FBB03B;
@@ -494,6 +498,7 @@ there.
 
 .admin-body {
   margin-top: -5px;
+  padding-top: 30px;
   width: 100%;
   background-color: #fff;
   min-height: 20px; }
