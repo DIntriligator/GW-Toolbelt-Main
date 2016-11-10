@@ -106,3 +106,5 @@ include(GWTB_PLUGIN_DIR . 'helpers/cpt.php');
 
 //modules
 include(GWTB_PLUGIN_DIR . 'modules/shortcodes.php');
+include(GWTB_PLUGIN_DIR . 'modules/social-widget.php');
+include(GWTB_PLUGIN_DIR . 'modules/custom-excerpt.php');
