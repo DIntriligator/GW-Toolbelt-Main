@@ -1,4 +1,4 @@
-<div class="wrap">
+<div id="gwtb" class="wrap">
 <section class="admin-header">
 	<div class="container">
 	  <div class="row">

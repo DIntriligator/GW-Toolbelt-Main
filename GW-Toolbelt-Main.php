@@ -99,3 +99,7 @@ function gwtb_admin_style() {
   wp_enqueue_style( 'custom_wp_admin_css', plugins_url('style.css', __FILE__) );
 }
 add_action('admin_head', 'gwtb_admin_style');
+
+
+//helpers
+include(GWTB_PLUGIN_DIR . 'helpers/cpt.php');
