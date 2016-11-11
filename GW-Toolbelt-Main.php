@@ -103,6 +103,7 @@ add_action('admin_head', 'gwtb_admin_style');
 
 //helpers
 include(GWTB_PLUGIN_DIR . 'helpers/cpt.php');
+include(GWTB_PLUGIN_DIR . 'helpers/css.php');
 
 //modules
 include(GWTB_PLUGIN_DIR . 'modules/shortcodes.php');
