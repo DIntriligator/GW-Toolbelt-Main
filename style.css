@@ -507,5 +507,7 @@
     display: block;
     margin: 0 auto;
     position: relative; }
+  #gwtb .maintenance-checkbox input[type="checkbox"] {
+    display: none; }
 
 /*# sourceMappingURL=style.css.map */
