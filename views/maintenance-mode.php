@@ -8,10 +8,13 @@ include(GWTB_PLUGIN_DIR . 'views/header.php');
 			<form name="maintenance-switch" method="post" action="<?php echo admin_url( 'admin.php' ); ?>">
 				<input type="hidden" name="action" value="gwtb_maintenance_switch" />
 				<?php wp_nonce_field()?>
-				<div class="maintenance-checkbox">
 					<?php $mm = get_option('gwtb-mm'); ?>
-	    		<input type="checkbox" name="switch" value="true" id="switch" <?php if($mm){echo 'checked';}  ?>/>
-	    		<label for="author<?php echo $index ?>" class="checkbox_label">Author</label><br>
+	    		<?php if($mm['switch']) : ?>
+	    			<input type="image" name="submit" class="switch" src="<?php echo plugin_dir_url(dirname(__FILE__)) . '/images/switch-on.jpg' ?>" border="0" alt="Submit"><br>
+	    		<?php else : ?>
+	    			<input type="image" name="submit" class="switch" src="<?php echo plugin_dir_url(dirname(__FILE__)) . '/images/switch-off.jpg' ?>" border="0" alt="Submit" /><br>
+	    		<?php endif ?>
+	    		
 				</div>
 			</form>
 		</div>

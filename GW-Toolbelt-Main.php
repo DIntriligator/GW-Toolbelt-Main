@@ -145,5 +145,8 @@ include(GWTB_PLUGIN_DIR . 'helpers/css.php');
 include(GWTB_PLUGIN_DIR . 'modules/shortcodes.php');
 include(GWTB_PLUGIN_DIR . 'modules/social-widget.php');
 include(GWTB_PLUGIN_DIR . 'modules/custom-excerpt.php');
+
+//controllers
+include(GWTB_PLUGIN_DIR . 'controllers/maintenance-mode.php');
 }
 add_action( 'init', 'gwtb_include_mods_helpers');
