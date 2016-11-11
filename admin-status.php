@@ -3,10 +3,10 @@ $title = "PLUGIN STATUS";
 include(GWTB_PLUGIN_DIR . 'layout/header.php'); 
 
 //CPT
+echo'<div class="container">';
+echo '<h6><b>Custom Post Types</b></h6>';
 $cpts = get_option('gwtb-cpt');
 if($cpts){
-	echo'<div class="container">';
-	echo '<h6><b>Custom Post Types</b></h6>';
 	foreach($cpts as $cpt){
 		echo'<p><b>'.$cpt['plural']. '</b> 
 		| slug: '. $cpt['slug']. ' 
@@ -24,9 +24,24 @@ if($cpts){
 		| comments: ' .$cpt['comments'] . '
 		| page-attributes: ' . $cpt['page-attributes'];
 	}
-	echo '</div>';
+} else {
+	echo 'N/A';
 }
+echo '</div>';
+//SHAME!
+echo '<br><br>';
 
+
+//CSS
+echo'<div class="container">';
+echo '<h6><b>Custom CSS</b></h6>';
+$css = get_option('gwtb-css');
+if($css){
+	echo $css;
+} else {
+	echo 'N/A';
+}
+echo '</div>';
 //SHAME!
 echo '<br><br>';
 
