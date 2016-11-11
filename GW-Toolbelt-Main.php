@@ -115,7 +115,7 @@ add_action( 'admin_menu', 'gwtb_mm_menu', 2 );
 */
 
 function gwtb_mm_init(){
-	include(GWTB_PLUGIN_DIR . 'views/maintenance-mode.php');
+	include(GWTB_PLUGIN_DIR . 'views/mm.php');
 }
 
 /*
@@ -145,6 +145,7 @@ include(GWTB_PLUGIN_DIR . 'helpers/css.php');
 include(GWTB_PLUGIN_DIR . 'modules/shortcodes.php');
 include(GWTB_PLUGIN_DIR . 'modules/social-widget.php');
 include(GWTB_PLUGIN_DIR . 'modules/custom-excerpt.php');
+include(GWTB_PLUGIN_DIR . 'modules/image-uploader.php');
 
 //controllers
 include(GWTB_PLUGIN_DIR . 'controllers/maintenance-mode.php');
