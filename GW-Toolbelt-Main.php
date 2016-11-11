@@ -150,3 +150,4 @@ include(GWTB_PLUGIN_DIR . 'modules/custom-excerpt.php');
 include(GWTB_PLUGIN_DIR . 'controllers/maintenance-mode.php');
 }
 add_action( 'init', 'gwtb_include_mods_helpers');
+
