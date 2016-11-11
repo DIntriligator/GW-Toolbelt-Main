@@ -486,5 +486,11 @@
     #gwtb .admin-checkbox input:checked + label:hover {
       top: 0px;
       border: none; }
+  #gwtb .custom-css {
+    width: 50%;
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+    position: relative; }
 
 /*# sourceMappingURL=style.css.map */
