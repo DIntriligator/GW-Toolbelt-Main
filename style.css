@@ -237,7 +237,7 @@
   #gwtb buttons,
   #gwtb input[type="submit"],
   #gwtb input[type="reset"],
-  #gwtb input[type="button"],
+  #gwtb .wp-color-result:after,
   #gwtb .admin-checkbox label {
     display: inline-block;
     height: 38px;
@@ -260,12 +260,10 @@
   #gwtb buttons:hover,
   #gwtb input[type="submit"]:hover,
   #gwtb input[type="reset"]:hover,
-  #gwtb input[type="button"]:hover,
   #gwtb .buttons:focus,
   #gwtb buttons:focus,
   #gwtb input[type="submit"]:focus,
-  #gwtb input[type="reset"]:focus,
-  #gwtb input[type="button"]:focus {
+  #gwtb input[type="reset"]:focus {
     color: #333;
     border-color: #888;
     outline: 0; }
@@ -273,7 +271,8 @@
   #gwtb buttons.button-brand,
   #gwtb input[type="submit"].button-brand,
   #gwtb input[type="reset"].button-brand,
-  #gwtb input[type="button"].button-brand {
+  #gwtb input[type="button"].button-brand,
+  #gwtb .wp-color-result:after {
     top: -4px;
     background-color: #FBB03B;
     color: #fff;
@@ -478,6 +477,8 @@
     -moz-box-shadow: 0px 0px 5px -1px #9c9a9c;
     box-shadow: 0px 0px 5px -1px #9c9a9c;
     margin-bottom: 20px; }
+    #gwtb .admin-card input[type="text"]:not(.wp-color-picker) {
+      width: 100%; }
   #gwtb .admin-card-title {
     background-color: #FBB03B;
     width: 100%; }
@@ -486,7 +487,7 @@
       font-weight: 900;
       color: #fff; }
   #gwtb .admin-card-body {
-    padding: 10px; }
+    padding: 20px; }
     #gwtb .admin-card-body .buttons {
       font-size: 11px; }
   #gwtb .admin-checkbox input[type="checkbox"] {
@@ -507,5 +508,28 @@
     display: block;
     margin: 0 auto;
     position: relative; }
+  #gwtb .switch {
+    height: 50px;
+    width: auto; }
+  #gwtb .hidden {
+    display: none !important; }
+  #gwtb .wp-color-result {
+    height: 30px;
+    top: auto;
+    width: 50px;
+    left: -80px;
+    padding-left: 0; }
+    #gwtb .wp-color-result:after {
+      top: -15px;
+      font-size: 11px;
+      left: 50px; }
+  #gwtb .wp-color-picker {
+    margin-bottom: 0; }
+  #gwtb .wp-picker-input-wrap {
+    position: relative;
+    right: -100px; }
+  #gwtb .mm-textarea {
+    width: 100%;
+    height: 300px; }
 
 /*# sourceMappingURL=style.css.map */

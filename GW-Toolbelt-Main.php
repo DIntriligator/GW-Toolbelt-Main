@@ -63,7 +63,7 @@ function gwtb_admin_status_menu(){
 	$menu = add_submenu_page( 'gwtoolbelt', 'Status', 'Status', 'manage_options', 'gwtb-status', 'gwtb_status_init' );
 
 }
-add_action( 'admin_menu', 'gwtb_admin_status_menu', 2 );
+add_action( 'admin_menu', 'gwtb_admin_status_menu', 3 );
 
 /*
 *  gwtb_admin_status_menu
@@ -80,6 +80,42 @@ add_action( 'admin_menu', 'gwtb_admin_status_menu', 2 );
 
 function gwtb_status_init(){
 	include(GWTB_PLUGIN_DIR . 'views/status.php');
+}
+
+/*
+*  gwtb_mm_menu
+*
+*  This function adds a maintenance mode option to the site
+*
+*  @type    function
+*  @date    11/09/16
+*  @since   0.0.00
+*
+*  @param   N/A
+*  @return  N/A
+*/
+
+function gwtb_mm_menu(){
+	$menu = add_submenu_page( 'gwtoolbelt', 'Maintenance Mode', 'Maintenance Mode', 'manage_options', 'gwtb-mm', 'gwtb_mm_init' );
+
+}
+add_action( 'admin_menu', 'gwtb_mm_menu', 2 );
+
+/*
+*  gwtb_admin_status_menu
+*
+*  This function adds a page layout for the gwtb_admin_status_menu function
+*
+*  @type    function
+*  @date    11/09/16
+*  @since   0.0.00
+*
+*  @param   N/A
+*  @return  N/A
+*/
+
+function gwtb_mm_init(){
+	include(GWTB_PLUGIN_DIR . 'views/mm.php');
 }
 
 /*
@@ -109,5 +145,10 @@ include(GWTB_PLUGIN_DIR . 'helpers/css.php');
 include(GWTB_PLUGIN_DIR . 'modules/shortcodes.php');
 include(GWTB_PLUGIN_DIR . 'modules/social-widget.php');
 include(GWTB_PLUGIN_DIR . 'modules/custom-excerpt.php');
+include(GWTB_PLUGIN_DIR . 'modules/image-uploader.php');
+
+//controllers
+include(GWTB_PLUGIN_DIR . 'controllers/maintenance-mode.php');
 }
 add_action( 'init', 'gwtb_include_mods_helpers');
+
