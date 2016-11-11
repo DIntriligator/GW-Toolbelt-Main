@@ -182,7 +182,7 @@ a:hover {
 buttons,
 input[type="submit"],
 input[type="reset"],
-input[type="button"],
+.wp-color-result:after,
 .admin-checkbox label{
   display: inline-block;
   height: 38px;
@@ -205,12 +205,10 @@ input[type="button"],
 buttons:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
-input[type="button"]:hover,
 .buttons:focus,
 buttons:focus,
 input[type="submit"]:focus,
-input[type="reset"]:focus,
-input[type="button"]:focus {
+input[type="reset"]:focus {
   color: #333;
   border-color: #888;
   outline: 0; }
@@ -218,7 +216,8 @@ input[type="button"]:focus {
 buttons.button-brand,
 input[type="submit"].button-brand,
 input[type="reset"].button-brand,
-input[type="button"].button-brand, 
+input[type="button"].button-brand,
+.wp-color-result:after
 {
   top: -4px;
   background-color: $yellow;

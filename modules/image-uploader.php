@@ -5,11 +5,11 @@ wp_enqueue_script('jquery');
 // This will enqueue the Media Uploader script
 wp_enqueue_media();
 ?>
-    <div class="text-center">
+<div class="text-center">
     <input type="hidden" name="<?php echo $settings['id'] ?>" id="<?php echo $settings['id'] ?>-image_url" class="regular-text" value="<?php echo get_option($settings['id']) ?>">
     <img src="<?php echo get_option($settings['id']) ?>" id="<?php echo $settings['id'] ?>-image"><br><br>
     <div class="image-uploader-div">
-      <input type="button" name="upload-btn" id="<?php echo $settings['id'] ?>-upload-btn" class="buttons button-brand" value="Upload Image">
+      <input type="button" name="upload-btn" id="<?php echo $settings['id'] ?>-upload-btn" class="buttons button-brand" value="<?php echo $settings['button-text'] ?>">
     </div>
 </div>
 <script type="text/javascript">
@@ -35,8 +35,8 @@ jQuery(document).ready(function($){
             <?php else : ?>
               var image_url = uploaded_image.toJSON().url;
             <?php endif; ?>  
-            if(image_url.indexOf('png') < 0 ) {
-              alert('Image must be a png')
+            if(image_url.indexOf('png') < 0  && '<?php echo $settings['any-file'] ?>' == 'yes'){
+              alert('Image must be a png');
             } else {
               jQuery('#image_url').val(image_url);
               jQuery('#<?php echo $settings['id'] ?>-image').attr('src', image_url);

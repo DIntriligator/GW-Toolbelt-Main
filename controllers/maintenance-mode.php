@@ -85,3 +85,12 @@ function get_page_by_name($pagename){
 	  }
 	}
 }
+
+
+//color picker
+function color_picker_assets($hook_suffix) {
+    // $hook_suffix to apply a check for admin page.
+    wp_enqueue_style( 'wp-color-picker' );
+    wp_enqueue_script( 'color-picker-functions', plugin_dir_url( dirname(__FILE__) ) . 'js/scripts.js', array( 'wp-color-picker' ), NULL, true );
+}
+add_action( 'admin_enqueue_scripts', 'color_picker_assets' );

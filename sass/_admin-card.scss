@@ -3,7 +3,13 @@
 	-moz-box-shadow: 0px 0px 5px -1px rgba(156,154,156,1);
 	box-shadow: 0px 0px 5px -1px rgba(156,154,156,1);
 	margin-bottom:20px;
+
+	input[type="text"]:not(.wp-color-picker){
+		width:100%;
+	}
+
 }
+
 .admin-card-title{
 	background-color:$yellow;
 	width: 100%;
@@ -14,7 +20,7 @@
 	}
 }
 .admin-card-body{
-	padding:10px;
+	padding:20px;
 	.buttons{
 		font-size:11px;
 	}
