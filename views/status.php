@@ -1,6 +1,6 @@
 <?php 
 $title = "PLUGIN STATUS"; 
-include(GWTB_PLUGIN_DIR . 'layout/header.php'); 
+include(GWTB_PLUGIN_DIR . 'views/header.php'); 
 
 //CPT
 echo'<div class="container">';
@@ -45,5 +45,5 @@ echo '</div>';
 //SHAME!
 echo '<br><br>';
 
-include(GWTB_PLUGIN_DIR . 'layout/footer.php');
+include(GWTB_PLUGIN_DIR . 'views/footer.php');
 ?>
