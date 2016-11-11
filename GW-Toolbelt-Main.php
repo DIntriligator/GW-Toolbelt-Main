@@ -25,7 +25,7 @@ define( 'GWTB_PLUGIN_DIR', dirname(__FILE__).'/' );
 */
 
 function gwtb_admin_menu() {
-	$menu = add_menu_page( 'GW Toolbelt', 'GW Toolbelt', 'manage_options', 'gwtoolbelt', 'gwtb_admin_menu_init', plugin_dir_url(__FILE__) . 'images/graphw-logo.png');
+	$menu = add_menu_page( 'GW Tool Belt', 'GW Tool Belt', 'manage_options', 'gwtoolbelt', 'gwtb_admin_menu_init', plugin_dir_url(__FILE__) . 'images/graphw-logo.png');
 
 }
 add_action( 'admin_menu', 'gwtb_admin_menu' , 1);
@@ -43,7 +43,7 @@ add_action( 'admin_menu', 'gwtb_admin_menu' , 1);
 *  @return  N/A
 */
 function gwtb_admin_menu_init() {
-	include(GWTB_PLUGIN_DIR . 'admin-welcome.php');
+	include(GWTB_PLUGIN_DIR . 'views/front-page.php');
 }
 
 /*
@@ -79,7 +79,7 @@ add_action( 'admin_menu', 'gwtb_admin_status_menu', 2 );
 */
 
 function gwtb_status_init(){
-	include(GWTB_PLUGIN_DIR . 'admin-status.php');
+	include(GWTB_PLUGIN_DIR . 'views/status.php');
 }
 
 /*
@@ -100,7 +100,7 @@ function gwtb_admin_style() {
 }
 add_action('admin_head', 'gwtb_admin_style');
 
-
+function gwtb_include_mods_helpers(){
 //helpers
 include(GWTB_PLUGIN_DIR . 'helpers/cpt.php');
 include(GWTB_PLUGIN_DIR . 'helpers/css.php');
@@ -109,3 +109,5 @@ include(GWTB_PLUGIN_DIR . 'helpers/css.php');
 include(GWTB_PLUGIN_DIR . 'modules/shortcodes.php');
 include(GWTB_PLUGIN_DIR . 'modules/social-widget.php');
 include(GWTB_PLUGIN_DIR . 'modules/custom-excerpt.php');
+}
+add_action( 'init', 'gwtb_include_mods_helpers');
